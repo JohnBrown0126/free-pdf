@@ -2,6 +2,8 @@
 
 A lightweight, local PDF form filler and annotator. Upload a PDF, fill in form fields or add text/shape/signature overlays, and download the result — all processed locally on your machine.
 
+![Editor](docs/design.png)
+
 ## Features
 
 - Fill native PDF form fields (text, checkboxes)
@@ -20,7 +22,7 @@ A lightweight, local PDF form filler and annotator. Upload a PDF, fill in form f
 ## Getting started
 
 ```bash
-git clone https://github.com/your-org/free-pdf.git
+git clone https://github.com/JohnBrown0126/free-pdf.git
 cd free-pdf
 npm install
 npm start
