@@ -10,7 +10,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "eslint ."
   },
   "dependencies": {
     "express": "^4.19.2",
@@ -21,6 +22,8 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
     "vitest": "^4.1.8"
   },
   "license": "MIT",
