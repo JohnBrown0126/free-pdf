@@ -14,6 +14,12 @@ A lightweight, local PDF form filler and annotator. Upload a PDF, fill in form f
 - Snap-to-align guides when positioning overlays
 - Session persistence — your work survives a page reload
 
+## Why this exists
+
+The free options for filling PDFs all have the same tradeoff: either your file leaves your machine (PDF24, Smallpdf, ilovepdf), or the tool is too limited (Preview handles basic fields and signatures but no freeform overlays or shapes; Adobe Reader is free only for native form fields).
+
+free-pdf runs entirely on localhost. Nothing is uploaded anywhere. It handles both native AcroForm fields and freeform annotation — text, shapes, signatures, dates — and downloads a properly flattened PDF with your content baked in.
+
 ## Requirements
 
 - Node.js 18 or later
