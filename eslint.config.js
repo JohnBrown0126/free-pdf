@@ -3,7 +3,7 @@ const globals = require('globals');
 module.exports = [
   // Server (CJS, Node)
   {
-    files: ['server.js'],
+    files: ['server.js', 'server/**/*.js'],
     languageOptions: {
       ecmaVersion: 2022,
       sourceType: 'commonjs',
