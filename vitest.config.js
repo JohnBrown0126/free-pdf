@@ -6,7 +6,7 @@ export default defineConfig({
     include: ['tests/unit/**/*.test.js'],
     coverage: {
       provider: 'v8',
-      include: ['public/js/**/*.js'],
+      include: ['public/js/**/*.js', 'server/**/*.js'],
       exclude: ['public/js/main.js', 'public/js/dom.js'],
     },
   },
