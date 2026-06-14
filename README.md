@@ -22,7 +22,7 @@ free-pdf runs entirely on localhost. Nothing is uploaded anywhere. It handles bo
 
 ## Requirements
 
-- Node.js 18 or later
+- Node.js 24 or later
 - npm
 
 ## Getting started
