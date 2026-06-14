@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>free-pdf</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>free-pdf</h1>
+      <p class="subtitle">Fill PDF forms locally — nothing leaves your machine</p>
+    </header>
+
+    <section id="upload-section">
+      <div id="drop-zone">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+        <p>Drop a PDF here or <label for="file-input" class="link">browse</label></p>
+        <input type="file" id="file-input" accept="application/pdf" hidden />
+      </div>
+    </section>
+
+    <section id="editor-section" hidden>
+      <div id="sidebar">
+        <div id="sidebar-header">
+          <span id="filename"></span>
+          <button id="change-file-btn" class="btn-ghost">Change file</button>
+        </div>
+        <div id="draw-toolbar" hidden>
+          <p class="tool-section-label">Text</p>
+          <button class="tool-btn tool-btn-wide" data-tool="text" title="Text field">
+            <span class="tool-icon-t">T</span> Text field
+          </button>
+          <button class="tool-btn tool-btn-wide" data-tool="date" title="Date field">
+            <span class="tool-icon-t">D</span> Date
+          </button>
+          <button class="tool-btn tool-btn-wide" data-tool="signature" title="Signature">
+            <span class="tool-icon-t" style="font-style:italic">S</span> Signature
+          </button>
+
+          <p class="tool-section-label" style="margin-top:12px">Shapes</p>
+          <div class="tool-row">
+            <button class="tool-btn" data-tool="circle"     title="Circle">○</button>
+            <button class="tool-btn" data-tool="cross"      title="Cross">✕</button>
+            <button class="tool-btn" data-tool="check"      title="Checkmark">✓</button>
+            <button class="tool-btn" data-tool="rect"       title="Rectangle">□</button>
+            <button class="tool-btn" data-tool="rect-round" title="Rounded rectangle">▢</button>
+          </div>
+          <p class="draw-hint" id="draw-hint-text">Select a tool then drag on the document</p>
+        </div>
+        <div id="fields-container">
+          <p class="loading">Detecting form fields…</p>
+        </div>
+        <div id="sidebar-actions">
+          <button id="download-btn" class="btn-primary">Download filled PDF</button>
+        </div>
+      </div>
+      <div id="viewer">
+        <div id="canvas-wrapper">
+          <canvas id="pdf-canvas"></canvas>
+        </div>
+        <div id="page-controls">
+          <button id="prev-page" class="btn-ghost">&#8592;</button>
+          <span id="page-info">Page 1</span>
+          <button id="next-page" class="btn-ghost">&#8594;</button>
+        </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Font style popup -->
+  <div id="font-popup" hidden>
+    <button id="fp-bold"   class="fp-btn" title="Bold">B</button>
+    <button id="fp-italic" class="fp-btn" title="Italic">I</button>
+    <div class="fp-divider" id="fp-div1"></div>
+    <input type="number" id="fp-size" min="6" max="96" value="11" title="Font size (pt)" />
+    <span class="fp-unit">pt</span>
+    <div class="fp-divider"></div>
+    <input type="color" id="fp-color" value="#000000" title="Text color" />
+  </div>
+
+  <!-- Date picker popup -->
+  <div id="date-popup" hidden>
+    <input type="date" id="dp-date" />
+    <div class="dp-time-row">
+      <label class="dp-label"><input type="checkbox" id="dp-include-time" /> Time</label>
+      <input type="time" id="dp-time" hidden />
+    </div>
+  </div>
+
+  <!-- Signature modal -->
+  <div id="sig-modal" hidden>
+    <div id="sig-backdrop"></div>
+    <div id="sig-inner">
+      <p id="sig-title">Draw your signature</p>
+      <canvas id="sig-canvas" width="480" height="160"></canvas>
+      <div id="sig-btns">
+        <button id="sig-clear"   class="btn-ghost">Clear</button>
+        <button id="sig-cancel"  class="btn-ghost">Cancel</button>
+        <button id="sig-confirm" class="btn-primary" style="width:auto;padding:8px 20px">Use</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

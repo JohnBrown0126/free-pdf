@@ -1,0 +1,27 @@
+{
+  "name": "free-pdf",
+  "version": "0.1.0",
+  "description": "Local PDF form filler",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "flatpickr": "^4.6.13",
+    "multer": "^2.1.1",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@vitest/coverage-v8": "^4.1.8",
+    "vitest": "^4.1.8"
+  },
+  "license": "MIT"
+}

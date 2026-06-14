@@ -1,0 +1,19 @@
+node_modules/
+
+# Uploaded PDFs
+uploads/
+
+# Test artifacts
+test-results/
+playwright-report/
+coverage/
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
