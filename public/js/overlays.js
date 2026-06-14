@@ -114,7 +114,20 @@ export function renderOverlays() {
         }
         ta.style.height = newH + 'px';
       };
-      requestAnimationFrame(autoGrow);
+      // On initial render, only expand — never shrink a saved height.
+      // scrollHeight can undercount when min-height: 100% resolves against
+      // the div's content area (which is 4px shorter than its border-box height).
+      requestAnimationFrame(() => {
+        ta.style.height = 'auto';
+        const contentH = Math.max(28, ta.scrollHeight);
+        const newH = Math.max(contentH, ov.canvasH);
+        if (newH !== ov.canvasH) {
+          ov.canvasH = newH;
+          div.style.height = newH + 'px';
+          syncPdfCoords(ov.id);
+        }
+        ta.style.height = newH + 'px';
+      });
 
       ta.addEventListener('focus', () => {
         state.activeOverlayId = ov.id;
