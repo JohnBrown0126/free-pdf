@@ -2,7 +2,7 @@
 
 A lightweight, local PDF form filler and annotator. Upload a PDF, fill in form fields or add text/shape/signature overlays, and download the result — all processed locally on your machine.
 
-![free-pdf](docs/screenshots.png)
+<img src="docs/screenshots.png" width="100%" alt="free-pdf — upload screen and editor" />
 
 ## Features
 
