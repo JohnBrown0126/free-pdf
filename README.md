@@ -1,24 +1,27 @@
 # free-pdf
 
-A lightweight, local PDF form filler and annotator. Upload a PDF, fill in form fields or add text/shape/signature overlays, and download the result — all processed locally on your machine.
+**Fill PDF forms and annotate PDFs locally — nothing leaves your machine.**
 
-<img src="docs/screenshots.png" width="100%" alt="free-pdf — upload screen and editor" />
+A self-hosted, browser-based PDF form filler and annotator. Upload a PDF, fill native form fields or add text, shapes, and signatures as overlays, then download the result as a flattened PDF. Runs entirely on localhost via Node.js — no accounts, no cloud, no uploads to third-party servers.
+
+<img src="docs/screenshots.png" width="100%" alt="free-pdf — PDF form filler and annotator running locally" />
 
 ## Features
 
-- Fill native PDF form fields (text, checkboxes)
+- Fill native AcroForm fields (text inputs, checkboxes)
 - Add text overlays with font, size, bold/italic, and colour controls
-- Draw shapes (rectangle, rounded rect, circle, checkmark, cross)
+- Draw shape overlays: rectangle, rounded rect, circle, checkmark, cross
 - Capture and embed signatures
 - Insert date fields with a date picker
 - Snap-to-align guides when positioning overlays
 - Session persistence — your work survives a page reload
+- Runs fully offline after install
 
 ## Why this exists
 
-The free options for filling PDFs all have the same tradeoff: either your file leaves your machine (PDF24, Smallpdf, ilovepdf), or the tool is too limited (Preview handles basic fields and signatures but no freeform overlays or shapes; Adobe Reader is free only for native form fields).
+Most free PDF tools require uploading your file to a third-party server (PDF24, Smallpdf, ilovepdf). Desktop alternatives are either limited (macOS Preview has no freeform overlays or shapes) or paywalled (Adobe Acrobat).
 
-free-pdf runs entirely on localhost. Nothing is uploaded anywhere. It handles both native AcroForm fields and freeform annotation — text, shapes, signatures, dates — and downloads a properly flattened PDF with your content baked in.
+free-pdf runs entirely on `localhost`. Your PDF never leaves your machine. It handles both native AcroForm fields and freeform annotation, and produces a properly flattened PDF — overlays are baked into the file, not just a display layer.
 
 ## Requirements
 
